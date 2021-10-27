@@ -10,6 +10,7 @@ public class Main {
         int max = 90;
         int min = 1;
         int z = 0;
+        int somma = 0;
 
         for (int i = 0; i < 15; i++) {
                 int numero = (int)(Math.random() * ((max - min) + 1)) + min;
@@ -21,6 +22,7 @@ public class Main {
                 }
             if(z==0){
                 numeri[i]=numero;
+                somma = somma + numero;
             }
             else{
                 z=0;
@@ -28,5 +30,6 @@ public class Main {
             }
         }
         System.out.println(Arrays.toString(numeri));
+        System.out.println("Media: " + somma/ 15);
     }
 }
