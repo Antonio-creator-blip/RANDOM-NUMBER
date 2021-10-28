@@ -5,7 +5,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int numeri [] = new int[15];
+        ArrayList<Integer> numeri = new ArrayList<Integer>();
+        Random random = new Random();
 
         int max = 90;
         int min = 1;
@@ -13,15 +14,15 @@ public class Main {
         int somma = 0;
 
         for (int i = 0; i < 15; i++) {
-                int numero = (int)(Math.random() * ((max - min) + 1)) + min;
-                for(int j = 0;j<numeri.length;j++){
+                int numero = random.nextInt(90);
+                for(int j = 0;j<numeri.size();j++){
 
-                    if(numeri[j]==numero) {
+                    if(numeri.get(j) ==numero) {
                         z++;
                     }
                 }
             if(z==0){
-                numeri[i]=numero;
+                numeri.add(numero);
                 somma = somma + numero;
             }
             else{
@@ -29,7 +30,7 @@ public class Main {
                 i=i-1;
             }
         }
-        System.out.println(Arrays.toString(numeri));
+        System.out.println(numeri);
         System.out.println("Media: " + somma/ 15);
     }
 }
